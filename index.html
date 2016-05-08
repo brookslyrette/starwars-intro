@@ -1,0 +1,90 @@
+<html>
+<head>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="starWars">
+        <div class="intro">
+            <p>
+                A long time ago in a galaxy far <br/>
+                far away...
+            </p>
+        </div>
+        <div class="logoContainer">
+            <img class="logo" src="img/Star_Wars_Yellow_Logo.svg" style="display: none"/>
+        </div>
+        <div class="scroll" >
+            <div class="tilt">
+                <div class="content">
+                    <h1>Episode IV</h1>
+                    <h2>A NEW HOPE</h2>
+                    <p>
+            It is a period of civil war.<br/>
+            Rebel spaceships, striking<br/>
+            from a hidden base, have won<br/>
+            their first victory against<br/>
+            the evil Galactic Empire.<br/>
+                    </p>
+                    <p>
+            During the battle, Rebel<br/>
+            spies managed to steal secret<br/>
+            plans to the Empire's<br/>
+            ultimate weapon, the DEATH<br/>
+            STAR, an armored space<br/>
+            station with enough power<br/>
+            to destroy an entire planet.<br/>
+                    </p>
+                    <p>
+            Pursued by the Empire's<br/>
+            sinister agents, Princess<br/>
+            Leia races home aboard her<br/>
+            starship, custodian of the<br/>
+            stolen plans that can save her<br/>
+            people and restore<br/>
+            freedom to the galaxy....<br/>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function starWarsIntro() {
+            var intro = document.getElementsByClassName('intro')[0];
+            var logo = document.getElementsByClassName('logo')[0];
+            var scroll = document.getElementsByClassName('scroll')[0];
+            var tilt = document.getElementsByClassName('tilt')[0];
+
+            // fade in the blue text
+            intro.classList.add('fadeIn');
+
+            // fade out the blue text
+            setTimeout(function(){
+                intro.style.opacity = 1;
+                intro.classList.add('fadeOut');
+            }, 5000);
+
+            // hide blue text
+            setTimeout(function(){
+                intro.style.display = 'none';
+            }, 7000);
+
+            // show the Star Wars logo and start shrinking it
+            setTimeout(function(){
+                logo.classList.add('shrink');
+                logo.style.display = 'inherit';
+            }, 7500);
+
+            // Just before the shrink is done start scrolling up the story text
+            setTimeout(function(){
+                scroll.style.display = 'inherit';
+                scroll.classList.add('scroll-content');
+            }, 12000);
+
+        }
+        window.onload = starWarsIntro;
+    </script>
+</body>
+</html>
